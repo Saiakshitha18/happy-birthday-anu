@@ -5,25 +5,180 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Happy Birthday Anu 💖</title>
 
-    <!-- Google Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
 
-    <!-- External CSS -->
-    <link rel="stylesheet" href="style.css" />
+    <style>
+      body {
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        background: #ffe6f2;
+        color: #333;
+        overflow-x: hidden;
+      }
+
+      /* SECTION ANIMATION */
+      section {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: all 1s ease;
+      }
+
+      section.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* HERO */
+      .hero {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background: linear-gradient(135deg, #ffcce6, #ffb6d9);
+        padding: 20px;
+      }
+
+      .hero h1 {
+        font-size: 60px;
+        margin: 0;
+        color: #d63384; /* Dark Pink */
+        animation: glow 2s ease-in-out infinite alternate;
+      }
+
+      @keyframes glow {
+        from {
+          text-shadow: 0 0 8px rgba(214, 51, 132, 0.5);
+        }
+        to {
+          text-shadow: 0 0 20px rgba(214, 51, 132, 0.9);
+        }
+      }
+
+      .hero p {
+        font-size: 20px;
+        max-width: 600px;
+        margin-top: 20px;
+        color: white;
+      }
+
+      /* LETTER */
+      .letter {
+        max-width: 750px;
+        margin: 80px auto;
+        padding: 60px 50px;
+        line-height: 1.9;
+        background: #fff5fa;
+        border-radius: 50px;
+        box-shadow: 0 25px 60px rgba(255, 105, 180, 0.15);
+        text-align: center;
+        transition: transform 0.4s ease;
+      }
+
+      .letter:hover {
+        transform: translateY(-5px);
+      }
+
+      .letter h2 {
+        color: #d63384;
+      }
+
+      /* GALLERY */
+      .gallery {
+        text-align: center;
+        padding: 60px 0;
+      }
+
+      .gallery-container {
+        display: flex;
+        gap: 25px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        padding: 20px;
+      }
+
+      .gallery-container::-webkit-scrollbar {
+        display: none;
+      }
+      .gallery-container {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+
+      .photo-card {
+        flex: 0 0 250px;
+        scroll-snap-align: center;
+        transform: scale(0.9);
+        opacity: 0.6;
+        transition: all 0.4s ease;
+      }
+
+      .photo-card img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 20px;
+      }
+
+      .photo-card p {
+        margin-top: 10px;
+        font-size: 14px;
+      }
+
+      .photo-card.active {
+        transform: scale(1.1);
+        opacity: 1;
+      }
+
+      .photo-card.active img {
+        box-shadow: 0 20px 40px rgba(255, 105, 180, 0.3);
+      }
+
+      /* FOOTER */
+      footer {
+        text-align: center;
+        padding: 40px;
+        font-style: italic;
+        color: #d63384;
+      }
+
+      /* FLOATING HEARTS */
+      .heart {
+        position: fixed;
+        bottom: -20px;
+        font-size: 24px;
+        animation: float 8s linear infinite;
+        opacity: 0.7;
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(0);
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(-100vh);
+          opacity: 0;
+        }
+      }
+    </style>
   </head>
+
   <body>
-    <div class="hero">
+    <section class="hero">
       <h1>Happy Birthday Anu 💕</h1>
       <p>
         To the strongest girl I know — the one who carries the world quietly and
         still keeps shining.
       </p>
-    </div>
+    </section>
 
-    <div class="letter">
+    <section class="letter">
       <h2>A Letter To You 💌</h2>
       <p>
         Dear Anu,<br /><br />
@@ -44,39 +199,78 @@
       <p>
         Happy Birthday to my forever person. I am endlessly grateful for you. 💖
       </p>
-    </div>
+    </section>
 
-    <!-- Photo Gallery Section -->
-    <div class="gallery">
+    <section class="gallery">
       <h2>Our Beautiful Memories 📸</h2>
+
       <div class="gallery-container">
         <div class="photo-card">
-          <img
-            src="images/childhood1.jpeg"
-            alt="Childhood Memory 1"
-            height="300"
-          />
+          <img src="images/childhood1.jpeg" loading="lazy" alt="Memory 1" />
           <p>Little us 💕</p>
         </div>
         <div class="photo-card">
-          <img
-            src="images/childhood2.jpeg"
-            alt="Childhood Memory 1"
-            height="300"
-          />
-          <p>Little us 💕</p>
-        </div>
-        <div class="photo-card">
-          <img src="images/childhood2.jpg" alt="Childhood Memory 2" />
+          <img src="images/childhood2.jpeg" loading="lazy" alt="Memory 2" />
           <p>Our childhood smile ✨</p>
         </div>
-
         <div class="photo-card">
-          <img src="images/recent1.jpg" alt="Recent Photo" />
-          <p>Still together, always ❤️</p>
+          <img src="images/childhood3.jpeg" loading="lazy" alt="Memory 3" />
+          <p>Golden memories 💛</p>
+        </div>
+        <div class="photo-card">
+          <img src="images/childhood4.jpeg" loading="lazy" alt="Memory 4" />
+          <p>Still together ❤️</p>
+        </div>
+        <div class="photo-card">
+          <img src="images/childhood5.jpeg" loading="lazy" alt="Memory 5" />
+          <p>Still together ❤️</p>
+        </div>
+        <div class="photo-card">
+          <img src="images/childhood6.jpeg" loading="lazy" alt="Memory 6" />
+          <p>Still together ❤️</p>
+        </div>
+        <div class="photo-card">
+          <img src="images/childhood 8 (2).jpg" loading="lazy" alt="Memory 7" />
+          <p>Still together ❤️</p>
+        </div>
+        <div class="photo-card">
+          <img src="images/childhood15.jpg" loading="lazy" alt="Memory 8" />
+          <p>Still together ❤️</p>
+        </div>
+        <div class="photo-card">
+          <img src="images/childhood7.jpeg" loading="lazy" alt="Memory 9" />
+          <p>Still together ❤️</p>
+        </div>
+        <div class="photo-card">
+          <img
+            src="images/childhood 9 (2).jpg"
+            loading="lazy"
+            alt="Memory 10"
+          />
+          <p>Still together ❤️</p>
+        </div>
+        <div class="photo-card">
+          <img src="images/childhood 10.jpg" loading="lazy" alt="Memory 11" />
+          <p>Still together ❤️</p>
+        </div>
+        <div class="photo-card">
+          <img src="images/childhood11.jpg" loading="lazy" alt="Memory 12" />
+          <p>Still together ❤️</p>
+        </div>
+        <div class="photo-card">
+          <img src="images/childhood12.jpg" loading="lazy" alt="Memory 13" />
+          <p>Still together ❤️</p>
+        </div>
+        <div class="photo-card">
+          <img src="images/childhood13.jpg" loading="lazy" alt="Memory 14" />
+          <p>Still together ❤️</p>
+        </div>
+        <div class="photo-card">
+          <img src="images/childhood14.jpg" loading="lazy" alt="Memory 15" />
+          <p>Still together ❤️</p>
         </div>
       </div>
-    </div>
+    </section>
 
     <footer>"Even the strongest hearts deserve to be protected." 💕</footer>
 
@@ -88,14 +282,39 @@
     <div class="heart" style="left: 85%; animation-delay: 3s">💗</div>
 
     <script>
-      const cards = document.querySelectorAll(".photo-card");
+      /* Fade-in animation */
+      const sections = document.querySelectorAll("section");
 
-      cards.forEach((card) => {
-        card.addEventListener("click", () => {
-          cards.forEach((c) => c.classList.remove("active"));
-          card.classList.add("active");
+      window.addEventListener("scroll", () => {
+        sections.forEach((sec) => {
+          const top = sec.getBoundingClientRect().top;
+          if (top < window.innerHeight - 100) {
+            sec.classList.add("show");
+          }
         });
       });
+
+      /* Auto highlight center image */
+      const container = document.querySelector(".gallery-container");
+      const cards = document.querySelectorAll(".photo-card");
+
+      function updateActiveCard() {
+        let center = container.scrollLeft + container.offsetWidth / 2;
+
+        cards.forEach((card) => {
+          let cardCenter = card.offsetLeft + card.offsetWidth / 2;
+          let distance = Math.abs(center - cardCenter);
+
+          if (distance < card.offsetWidth / 2) {
+            card.classList.add("active");
+          } else {
+            card.classList.remove("active");
+          }
+        });
+      }
+
+      container.addEventListener("scroll", updateActiveCard);
+      updateActiveCard();
     </script>
   </body>
 </html>
