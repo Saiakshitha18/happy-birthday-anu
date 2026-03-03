@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Birthday Anu 💖</title>
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="hero">
+      <h1>Happy Birthday Anu 💕</h1>
+      <p>
+        To the strongest girl I know — the one who carries the world quietly and
+        still keeps shining.
+      </p>
+    </div>
+
+    <div class="letter">
+      <h2>A Letter To You 💌</h2>
+      <p>
+        Dear Anu,<br /><br />
+        You are strength wrapped in softness. You fight battles silently, yet
+        you never let your light fade.
+      </p>
+
+      <p>
+        Even when life gets heavy, you stand tall. Even when you're tired, you
+        choose kindness. That quiet power inside you? It’s rare.
+      </p>
+
+      <p>
+        I hope this year gives you peace, happiness, and moments where you don’t
+        have to be strong — because I’ll be strong for you.
+      </p>
+
+      <p>
+        Happy Birthday to my forever person. I am endlessly grateful for you. 💖
+      </p>
+    </div>
+
+    <!-- Photo Gallery Section -->
+    <div class="gallery">
+      <h2>Our Beautiful Memories 📸</h2>
+      <div class="gallery-container">
+        <div class="photo-card">
+          <img
+            src="images/childhood1.jpeg"
+            alt="Childhood Memory 1"
+            height="300"
+          />
+          <p>Little us 💕</p>
+        </div>
+        <div class="photo-card">
+          <img
+            src="images/childhood2.jpeg"
+            alt="Childhood Memory 1"
+            height="300"
+          />
+          <p>Little us 💕</p>
+        </div>
+        <div class="photo-card">
+          <img src="images/childhood2.jpg" alt="Childhood Memory 2" />
+          <p>Our childhood smile ✨</p>
+        </div>
+
+        <div class="photo-card">
+          <img src="images/recent1.jpg" alt="Recent Photo" />
+          <p>Still together, always ❤️</p>
+        </div>
+      </div>
+    </div>
+
+    <footer>"Even the strongest hearts deserve to be protected." 💕</footer>
+
+    <!-- Floating Hearts -->
+    <div class="heart" style="left: 10%; animation-delay: 0s">💗</div>
+    <div class="heart" style="left: 30%; animation-delay: 2s">💖</div>
+    <div class="heart" style="left: 50%; animation-delay: 4s">💗</div>
+    <div class="heart" style="left: 70%; animation-delay: 1s">💖</div>
+    <div class="heart" style="left: 85%; animation-delay: 3s">💗</div>
+
+    <script>
+      const cards = document.querySelectorAll(".photo-card");
+
+      cards.forEach((card) => {
+        card.addEventListener("click", () => {
+          cards.forEach((c) => c.classList.remove("active"));
+          card.classList.add("active");
+        });
+      });
+    </script>
+  </body>
+</html>
